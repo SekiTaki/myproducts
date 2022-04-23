@@ -1,7 +1,8 @@
+import style from './css/ProductList.module.css'
 export default function ProductList() {
 
 let ProductList = [
-    {"id" : 1, "name" : "蘋果", "price" : "5", "image" : "apple.jpg", "description" : "新鮮蘋果50克，一日一蘋果，醫生遠離我"},
+    {"id" : 1, "name" : "蘋果", "price" : "5", "image" : "apple.jpg", "description" : "新鮮蘋果50克，一日一蘋果"},
     {"id" : 2, "name" : "橙", "price" : "3", "image" : "orange.jpg", "description" : "新鮮橙50克，又甜又好食"},
     {"id" : 3, "name" : "芒果", "price" : "4", "image" : "mango.jpg", "description" : "新鮮芒果500克，宜做甜品"},
     {"id" : 4, "name" : "西瓜", "price" : "20", "image" : "watermelon.jpg", "description" : "新鮮西瓜2公斤，夏季必備"},
@@ -11,15 +12,21 @@ let ProductList = [
 
     return (
         <div>
-            <h1>請選擇要購買的水果</h1>
-            <div>
+            <h1 className={style.center}>請選擇要購買的水果</h1>
+            <div className={style.center}>
                 {
                     ProductList.map(product=>(
-                        <div key={product.id}>
-                            {product.name}<br/>
-                            {product.price}<br/>
-                            <img alt='' src={process.env.PUBLIC_URL+'/img/'+product.image}/><br/>
-                            {product.description}<br/>
+                        <div className={style.product_border} key={product.id}>
+                            <div className={style.product_image}>
+                                <img alt='' src={process.env.PUBLIC_URL+'/img/'+product.image}/><br/>
+                            </div>
+                            <div className={style.product_name}>
+                                {product.name}<br/>
+                            </div>
+                            <div className={style.product_price}>
+                                {'$'+product.price}<br/>
+                            </div>
+                            <div>{product.description}<br/></div>
                         </div>
                     ))
                 }
