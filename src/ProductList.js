@@ -10,7 +10,7 @@ let ProductList = [
     {"id" : 6, "name" : "白蘿蔔", "price" : "5", "image" : "white-carrot.jpg", "description" : "新鮮白蘿蔔1公斤，宜煲湯"},
 ]
 
-let product = 水果
+let product = '水果'
 
 const handleClick = ()=>{
     product = 'react'
