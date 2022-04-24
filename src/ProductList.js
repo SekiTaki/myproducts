@@ -1,4 +1,6 @@
 import style from './css/ProductList.module.css'
+import { useState } from 'react'
+
 export default function ProductList() {
 
 let ProductList = [
@@ -10,10 +12,13 @@ let ProductList = [
     {"id" : 6, "name" : "白蘿蔔", "price" : "5", "image" : "white-carrot.jpg", "description" : "新鮮白蘿蔔1公斤，宜煲湯"},
 ]
 
-let product = '水果'
+//let product = '水果'
+
+const [product,setProduct] = useState('水果')
 
 const handleClick = ()=>{
-    product = 'react'
+    //product = 'react'
+    setProduct('react')
     console.log(product)
 }
 
