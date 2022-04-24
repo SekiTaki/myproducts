@@ -10,8 +10,16 @@ let ProductList = [
     {"id" : 6, "name" : "白蘿蔔", "price" : "5", "image" : "white-carrot.jpg", "description" : "新鮮白蘿蔔1公斤，宜煲湯"},
 ]
 
+let product = 水果
+
+const handleClick = ()=>{
+    product = 'react'
+    console.log(product)
+}
+
     return (
         <div>
+            {product}<button onClick ={handleClick}>改變變數值</button>
             <h1 className={style.center}>請選擇要購買的水果</h1>
             <div className={style.center}>
                 {
